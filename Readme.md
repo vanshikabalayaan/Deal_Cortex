@@ -1,5 +1,7 @@
 # DealCortex
 
+> Originally developed at [vineeta07/Piratesofcoralbean](https://github.com/vineeta07/Piratesofcoralbean).
+
 **Eliminate CRM Theatre with AI and Coral. DealCortex turns noisy, optimistic pipeline updates into ground-truth deal intelligence by joining Salesforce, Gmail, Gong, Slack, and LinkedIn in real time.**
 
 ---
@@ -122,7 +124,7 @@ The frontend calls the backend at `POST /api/analyze`, and the backend returns b
 ```bash
 # 1. Clone the repository
 git clone <your-repo-url>
-cd Deal_Cortex
+cd Piratesofcoralbean
 
 # 2. Install Coral CLI globally
 npm install -g @coral-ai/cli

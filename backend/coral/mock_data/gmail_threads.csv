@@ -1,0 +1,16 @@
+email_id,deal_id,contact_email,last_email_sent,last_reply_from_prospect,days_silent,thread_length,has_legal,contract_sent_date
+MSG-3ea6eec9,DEAL-1000,contact0@example.com,2026-05-30,2026-05-30,1,36,False,2026-04-20
+MSG-55afb48a,DEAL-1001,contact1@example.com,2026-05-27,2026-05-31,0,10,False,2026-04-21
+MSG-0db7f8c8,DEAL-1002,contact2@example.com,2026-05-28,2026-05-28,3,49,False,2026-04-18
+MSG-86533122,DEAL-1003,contact3@example.com,2026-05-27,2026-05-23,8,6,True,
+MSG-b94ede72,DEAL-1004,contact4@example.com,2026-05-26,2026-05-11,20,10,False,
+MSG-fe0d072f,DEAL-1005,contact5@example.com,2026-05-31,2026-05-28,3,21,True,2026-04-25
+MSG-6a596553,DEAL-1006,contact6@example.com,2026-05-27,2026-05-29,2,44,True,2026-04-17
+MSG-0b0b7bea,DEAL-1007,contact7@example.com,2026-05-31,2026-05-30,1,39,True,2026-04-19
+MSG-288374a3,DEAL-1008,contact8@example.com,2026-05-27,2026-05-03,28,31,True,
+MSG-c415e856,DEAL-1009,contact9@example.com,2026-05-31,2026-05-20,11,27,True,
+MSG-1e9673d0,DEAL-10010,contact10@example.com,2026-05-29,2026-05-29,2,36,False,2026-04-27
+MSG-ee756338,DEAL-10011,contact11@example.com,2026-05-31,2026-05-28,3,8,True,
+MSG-5e0754c1,DEAL-10012,contact12@example.com,2026-05-31,2026-05-31,0,39,True,2026-04-21
+MSG-3879e055,DEAL-10013,contact13@example.com,2026-05-31,2026-05-18,13,25,False,2026-04-17
+MSG-d1d5554c,DEAL-10014,contact14@example.com,2026-05-27,2026-05-19,12,22,False,

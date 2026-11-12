@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Theme tokens — stored as RGB triplets so Tailwind opacity modifiers work
+ * (e.g. bg-coral/10). Light is the default; dark is applied via
+ * [data-theme="dark"] on <html>, set before paint by the script in layout.tsx.
+ */
+:root {
+  --bg: 246 242 234;          /* chart paper */
+  --surface: 255 253 248;
+  --sunken: 239 233 221;
+  --ink: 27 36 51;            /* navy ink */
+  --ink-2: 74 83 99;
+  --ink-3: 122 129 144;
+  --line: 226 218 203;
+  --line-strong: 205 195 177;
+  --coral: 200 85 61;
+  --coral-ink: 168 64 42;     /* coral dark enough for text on paper */
+  --sea: 31 78 95;
+  --risk-red: 176 58 46;
+  --risk-amber: 168 107 18;
+  --risk-green: 59 122 74;
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: 15 21 30;
+  --surface: 22 30 42;
+  --sunken: 12 17 25;
+  --ink: 236 230 218;
+  --ink-2: 184 179 168;
+  --ink-3: 134 139 148;
+  --line: 38 49 66;
+  --line-strong: 56 69 89;
+  --coral: 226 125 98;
+  --coral-ink: 236 146 120;
+  --sea: 127 179 194;
+  --risk-red: 226 112 98;
+  --risk-amber: 217 166 72;
+  --risk-green: 112 181 130;
+  color-scheme: dark;
+}
+
+/* Black & white palette — overrides the colour accents, keeps risk colours */
+[data-palette='mono'] {
+  --bg: 255 255 255;
+  --surface: 255 255 255;
+  --sunken: 243 243 243;
+  --ink: 17 17 17;
+  --ink-2: 70 70 70;
+  --ink-3: 118 118 118;
+  --line: 229 229 229;
+  --line-strong: 196 196 196;
+  --coral: 17 17 17;
+  --coral-ink: 17 17 17;
+  --sea: 70 70 70;
+}
+
+[data-theme='dark'][data-palette='mono'] {
+  --bg: 8 8 8;
+  --surface: 18 18 18;
+  --sunken: 0 0 0;
+  --ink: 245 245 245;
+  --ink-2: 190 190 190;
+  --ink-3: 138 138 138;
+  --line: 42 42 42;
+  --line-strong: 70 70 70;
+  --coral: 245 245 245;
+  --coral-ink: 245 245 245;
+  --sea: 190 190 190;
+}
+
+html {
+  background: rgb(var(--bg));
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgb(var(--coral) / 0.22);
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--coral));
+  outline-offset: 2px;
+}
+
+/* Display headings use Fraunces with a softer optical size */
+.font-display {
+  font-variation-settings: 'SOFT' 50, 'WONK' 0;
+  letter-spacing: -0.015em;
+}
+
+/* Small caps label used across the app */
+.eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--ink-3));
+}
+
+/* Faint chart grid behind the hero */
+.chart-grid {
+  background-image:
+    linear-gradient(rgb(var(--line) / 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--line) / 0.55) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 30%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 95%);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--line-strong));
+  border-radius: 4px;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes typingDot {
+  0%, 60%, 100% { opacity: 0.25; }
+  30% { opacity: 1; }
+}
+
+/* Scroll-reveal used on the homepage */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Blinking caret for the typing demo */
+.caret::after {
+  content: '';
+  display: inline-block;
+  width: 1.5px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: currentColor;
+  animation: caretBlink 1s steps(1) infinite;
+}
+@keyframes caretBlink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
