@@ -122,7 +122,7 @@ The frontend calls the backend at `POST /api/analyze`, and the backend returns b
 ```bash
 # 1. Clone the repository
 git clone <your-repo-url>
-cd Piratesofcoralbean
+cd Deal_Cortex
 
 # 2. Install Coral CLI globally
 npm install -g @coral-ai/cli
