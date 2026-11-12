@@ -1,0 +1,12 @@
+.env
+.venv/
+colar_env/
+__pycache__/
+*.pyc
+.DS_Store
+.agent/
+brain/
+node_modules/
+.next/
+coral/coral.exe
+out.json
